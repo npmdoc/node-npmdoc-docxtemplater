@@ -1,0 +1,1512 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/open-xml-templating/docxtemplater#readme"
+
+    >docxtemplater (v3.0.11)</a>
+</h1>
+<h4>.docx generator working with templates and data (like Mustache)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater">module docxtemplater</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.XmlMatcher">
+            function <span class="apidocSignatureSpan">docxtemplater.</span>XmlMatcher
+            <span class="apidocSignatureSpan">(content, tagsXmlArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.XmlTemplater">
+            function <span class="apidocSignatureSpan">docxtemplater.</span>XmlTemplater
+            <span class="apidocSignatureSpan">(content, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.scope_manager">
+            function <span class="apidocSignatureSpan">docxtemplater.</span>scope_manager
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>DocUtils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>DocUtils.defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>DocUtils.traits</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>Errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>FileTypeConfig</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>lexer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.</span>parser</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.DocUtils">module docxtemplater.DocUtils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.cloneDeep">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>cloneDeep
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.concatArrays">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>concatArrays
+            <span class="apidocSignatureSpan">(arrays)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.convertSpaces">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>convertSpaces
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.decodeUtf8">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>decodeUtf8
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.encodeUtf8">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>encodeUtf8
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.escapeRegExp">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>escapeRegExp
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.getLeft">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>getLeft
+            <span class="apidocSignatureSpan">(parsed, element, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.getRight">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>getRight
+            <span class="apidocSignatureSpan">(parsed, element, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.mergeObjects">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>mergeObjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.moduleWrapper">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>moduleWrapper
+            <span class="apidocSignatureSpan">(module)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.pregMatchAll">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>pregMatchAll
+            <span class="apidocSignatureSpan">(regex, content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.sizeOfObject">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>sizeOfObject
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.str2xml">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>str2xml
+            <span class="apidocSignatureSpan">(str, errorHandler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.utf8ToWord">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>utf8ToWord
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.wordToUtf8">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>wordToUtf8
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.xml2str">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>xml2str
+            <span class="apidocSignatureSpan">(xmlNode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>charMap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>charMapRegexes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>traits</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.DocUtils.defaults">module docxtemplater.DocUtils.defaults</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.defaults.nullGetter">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.defaults.</span>nullGetter
+            <span class="apidocSignatureSpan">(part)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.defaults.parser">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.defaults.</span>parser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docxtemplater.DocUtils.defaults.</span>delimiters</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.DocUtils.traits">module docxtemplater.DocUtils.traits</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.traits.expandToOne">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.traits.</span>expandToOne
+            <span class="apidocSignatureSpan">(postparsed, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.DocUtils.traits.getExpandToDefault">
+            function <span class="apidocSignatureSpan">docxtemplater.DocUtils.traits.</span>getExpandToDefault
+            <span class="apidocSignatureSpan">(parts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.Errors">module docxtemplater.Errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.Errors.XTError">
+            function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.Errors.XTInternalError">
+            function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTInternalError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.Errors.XTScopeParserError">
+            function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTScopeParserError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.Errors.XTTemplateError">
+            function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTTemplateError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.lexer">module docxtemplater.lexer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.lexer.parse">
+            function <span class="apidocSignatureSpan">docxtemplater.lexer.</span>parse
+            <span class="apidocSignatureSpan">(xmlparsed, delimiters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.lexer.xmlparse">
+            function <span class="apidocSignatureSpan">docxtemplater.lexer.</span>xmlparse
+            <span class="apidocSignatureSpan">(content, xmltags)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.parser">module docxtemplater.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.parser.parse">
+            function <span class="apidocSignatureSpan">docxtemplater.parser.</span>parse
+            <span class="apidocSignatureSpan">(lexed, modules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.parser.postparse">
+            function <span class="apidocSignatureSpan">docxtemplater.parser.</span>postparse
+            <span class="apidocSignatureSpan">(parsed, modules)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater.scope_manager">module docxtemplater.scope_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.scope_manager.scope_manager">
+            function <span class="apidocSignatureSpan">docxtemplater.</span>scope_manager
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docxtemplater.scope_manager.createBaseScopeManager">
+            function <span class="apidocSignatureSpan">docxtemplater.scope_manager.</span>createBaseScopeManager
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater" id="apidoc.module.docxtemplater">module docxtemplater</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.XmlMatcher" id="apidoc.element.docxtemplater.XmlMatcher">
+        function <span class="apidocSignatureSpan">docxtemplater.</span>XmlMatcher
+        <span class="apidocSignatureSpan">(content, tagsXmlArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">XmlMatcher = function (content, tagsXmlArray) {
+	return DocUtils.cloneDeep(memoized(content, tagsXmlArray));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.XmlTemplater" id="apidoc.element.docxtemplater.XmlTemplater">
+        function <span class="apidocSignatureSpan">docxtemplater.</span>XmlTemplater
+        <span class="apidocSignatureSpan">(content, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XmlTemplater(content, options) {
+		_classCallCheck(this, XmlTemplater);
+
+		this.fromJson(options);
+		this.setModules({ inspect: { filePath: this.filePath } });
+		this.load(content);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.scope_manager" id="apidoc.element.docxtemplater.scope_manager">
+        function <span class="apidocSignatureSpan">docxtemplater.</span>scope_manager
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScopeManager(options) {
+		_classCallCheck(this, ScopeManager);
+
+		this.scopePath = options.scopePath;
+		this.scopeList = options.scopeList;
+		this.parser = options.parser;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.DocUtils" id="apidoc.module.docxtemplater.DocUtils">module docxtemplater.DocUtils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.cloneDeep" id="apidoc.element.docxtemplater.DocUtils.cloneDeep">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>cloneDeep
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cloneDeep = function (obj) {
+	return JSON.parse(JSON.stringify(obj));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	});
+	return handleRecursiveCase(res);
+}
+
+var memoized = memoize(xmlMatcher);
+
+module.exports = function (content, tagsXmlArray) {
+	return DocUtils.<span class="apidocCodeKeywordSpan">cloneDeep</span>(memoized(content, tagsXmlArray));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.concatArrays" id="apidoc.element.docxtemplater.DocUtils.concatArrays">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>concatArrays
+        <span class="apidocSignatureSpan">(arrays)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">concatArrays = function (arrays) {
+	return arrays.reduce(function (result, array) {
+		Array.prototype.push.apply(result, array);
+		return result;
+	}, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		position: start === 1 ? &#x22;start&#x22; : &#x22;end&#x22;
+	};
+}
+
+function tagMatcher(content, textMatchArray, othersMatchArray) {
+	var cursor = 0;
+	var contentLength = content.length;
+	var allMatches = DocUtils.<span class="apidocCodeKeywordSpan">concatArrays</span>([textMatchArray.map(function (tag) {
+		return { tag: tag, text: true };
+	}), othersMatchArray.map(function (tag) {
+		return { tag: tag, text: false };
+	})]).reduce(function (allMatches, t) {
+		allMatches[t.tag] = t.text;
+		return allMatches;
+	}, {});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.convertSpaces" id="apidoc.element.docxtemplater.DocUtils.convertSpaces">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>convertSpaces
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convertSpaces = function (s) {
+	return s.replace(spaceRegexp, &#x22; &#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _render = require(&#x22;./render.js&#x22;);
+
+function _getFullText(content, tagsXmlArray) {
+	var matcher = xmlMatcher(content, tagsXmlArray);
+	var result = matcher.matches.map(function (match) {
+		return match.array[2];
+	});
+	return DocUtils.wordToUtf8(DocUtils.<span class="apidocCodeKeywordSpan">convertSpaces</span>(result.join(&#x22;&#x22;)));
+}
+
+module.exports = function () {
+	function XmlTemplater(content, options) {
+		_classCallCheck(this, XmlTemplater);
+
+		this.fromJson(options);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.decodeUtf8" id="apidoc.element.docxtemplater.DocUtils.decodeUtf8">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>decodeUtf8
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decodeUtf8 = function (s) {
+	try {
+		if (s === undefined) {
+			return undefined;
+		}
+		// replace Ascii 160 space by the normal space, Ascii 32
+		return decodeURIComponent(escape(DocUtils.convertSpaces(s)));
+	} catch (e) {
+		var err = new Error(&#x22;End&#x22;);
+		err.properties.data = s;
+		err.properties.explanation = &#x22;Could not decode string to UTF8&#x22;;
+		throw err;
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.encodeUtf8" id="apidoc.element.docxtemplater.DocUtils.encodeUtf8">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>encodeUtf8
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeUtf8 = function (s) {
+	return unescape(encodeURIComponent(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.escapeRegExp" id="apidoc.element.docxtemplater.DocUtils.escapeRegExp">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>escapeRegExp
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeRegExp = function (str) {
+	return str.replace(regexStripRegexp, &#x22;\\$&#x26;&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.getLeft" id="apidoc.element.docxtemplater.DocUtils.getLeft">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>getLeft
+        <span class="apidocSignatureSpan">(parsed, element, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLeft = function (parsed, element, index) {
+	for (var i = index; i &#x3e;= 0; i--) {
+		var part = parsed[i];
+		if (part.value.indexOf(&#x22;&#x3c;&#x22; + element) === 0 &#x26;&#x26; [&#x22;&#x3e;&#x22;, &#x22; &#x22;].indexOf(part.value[element.length + 1]) !== -1) {
+			return i;
+		}
+	}
+	throwXmlTagNotFound({ position: &#x22;left&#x22;, element: element, parsed: parsed, index: index });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.getRight" id="apidoc.element.docxtemplater.DocUtils.getRight">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>getRight
+        <span class="apidocSignatureSpan">(parsed, element, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRight = function (parsed, element, index) {
+	for (var i = index, l = parsed.length; i &#x3c; l; i++) {
+		var part = parsed[i];
+		if (part.value === &#x22;&#x3c;/&#x22; + element + &#x22;&#x3e;&#x22;) {
+			return i;
+		}
+	}
+	throwXmlTagNotFound({ position: &#x22;right&#x22;, element: element, parsed: parsed, index: index });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.mergeObjects" id="apidoc.element.docxtemplater.DocUtils.mergeObjects">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>mergeObjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mergeObjects = function () {
+	var resObj = {};
+	var obj = void 0,
+	    keys = void 0;
+	for (var i = 0; i &#x3c; arguments.length; i += 1) {
+		obj = arguments[i];
+		keys = Object.keys(obj);
+		for (var j = 0; j &#x3c; keys.length; j += 1) {
+			resObj[keys[j]] = obj[keys[j]];
+		}
+	}
+	return resObj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.moduleWrapper" id="apidoc.element.docxtemplater.DocUtils.moduleWrapper">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>moduleWrapper
+        <span class="apidocSignatureSpan">(module)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moduleWrapper = function (module) {
+	var defaults = {
+		set: emptyFun,
+		parse: emptyFun,
+		render: emptyFun,
+		getTraits: emptyFun,
+		optionsTransformer: identity,
+		getRenderedMap: identity,
+		postparse: identity
+	};
+	if (Object.keys(defaults).every(function (key) {
+		return !module[key];
+	})) {
+		throw new Error(&#x22;This module cannot be wrapped, because it doesn&#x27;t define any of the necessary functions&#x22;);
+	}
+	Object.keys(defaults).forEach(function (key) {
+		module[key] = module[key] || defaults[key];
+	});
+	return module;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.pregMatchAll" id="apidoc.element.docxtemplater.DocUtils.pregMatchAll">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>pregMatchAll
+        <span class="apidocSignatureSpan">(regex, content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pregMatchAll = function (regex, content) {
+	<span class="apidocCodeCommentSpan">/* regex is a string, content is the content. It returns an array of all matches with their offset, for example:
+ 	 regex=la
+ 	 content=lolalolilala
+ returns: [{array: {0: &#x27;la&#x27;},offset: 2},{array: {0: &#x27;la&#x27;},offset: 8},{array: {0: &#x27;la&#x27;} ,offset: 10}]
+ */
+</span>	var matchArray = [];
+	var match = void 0;
+	while ((match = regex.exec(content)) != null) {
+		matchArray.push({ array: match, offset: match.index });
+	}
+	return matchArray;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function xmlMatcher(content, tagsXmlArray) {
+	var res = {};
+	res.content = content;
+	res.tagsXmlArray = tagsXmlArray;
+	res.tagsXmlArrayJoined = res.tagsXmlArray.join(&#x22;|&#x22;);
+	var regexp = new RegExp(&#x22;(&#x3c;(?:&#x22; + res.tagsXmlArrayJoined + &#x22;)[^&#x3e;]*&#x3e;)([^&#x3c;&#x3e;]*)&#x3c;/(?:&#
+x22; + res.tagsXmlArrayJoined + &#x22;)&#x3e;&#x22;, &#x22;g&#x22;);
+	res.matches = DocUtils.<span class="apidocCodeKeywordSpan">pregMatchAll</span>(regexp, res.content);
+	res.charactersAddedCumulative = res.matches.map(function () {
+		return 0;
+	});
+	res.charactersAdded = res.matches.map(function () {
+		return 0;
+	});
+	return handleRecursiveCase(res);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.sizeOfObject" id="apidoc.element.docxtemplater.DocUtils.sizeOfObject">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>sizeOfObject
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sizeOfObject = function (obj) {
+	return Object.keys(obj).length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.str2xml" id="apidoc.element.docxtemplater.DocUtils.str2xml">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>str2xml
+        <span class="apidocSignatureSpan">(str, errorHandler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">str2xml = function (str, errorHandler) {
+	var parser = new DOMParser({ errorHandler: errorHandler });
+	return parser.parseFromString(str, &#x22;text/xml&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.utf8ToWord" id="apidoc.element.docxtemplater.DocUtils.utf8ToWord">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>utf8ToWord
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utf8ToWord = function (string) {
+	if (typeof string !== &#x22;string&#x22;) {
+		string = string.toString();
+	}
+	var r = void 0;
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+		r = DocUtils.charMapRegexes[i];
+		string = string.replace(r.rend, r.start);
+	}
+	return string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			return moduleRendered.value;
+		}
+		if (part.type === &#x22;placeholder&#x22;) {
+			var value = options.scopeManager.getValue(part.value);
+			if (value == null) {
+				value = options.nullGetter(part);
+			}
+			return DocUtils.<span class="apidocCodeKeywordSpan">utf8ToWord</span>(value);
+		}
+		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+			return part.value;
+		}
+		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
+	}).join(&#x22;&#x22;);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.wordToUtf8" id="apidoc.element.docxtemplater.DocUtils.wordToUtf8">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>wordToUtf8
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wordToUtf8 = function (string) {
+	var r = void 0;
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+		r = DocUtils.charMapRegexes[i];
+		string = string.replace(r.rstart, r.end);
+	}
+	return string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var inPlaceHolder = false;
+		var placeHolderContent = void 0;
+		var tailParts = [];
+		return lexed.reduce(function (parsed, token) {
+			if (token.type === &#x22;delimiter&#x22;) {
+				inPlaceHolder = token.position === &#x22;start&#x22;;
+				if (token.position === &#x22;end&#x22;) {
+					placeHolderContent = DocUtils.<span class="apidocCodeKeywordSpan">wordToUtf8</span>(placeHolderContent);
+					if (!moduleParse(placeHolderContent, parsed)) {
+						parsed.push({ type: &#x22;placeholder&#x22;, value: placeHolderContent });
+					}
+					Array.prototype.push.apply(parsed, tailParts);
+					tailParts = [];
+					return parsed;
+				}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.xml2str" id="apidoc.element.docxtemplater.DocUtils.xml2str">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.</span>xml2str
+        <span class="apidocSignatureSpan">(xmlNode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">xml2str = function (xmlNode) {
+	var a = new XMLSerializer();
+	return a.serializeToString(xmlNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.DocUtils.defaults" id="apidoc.module.docxtemplater.DocUtils.defaults">module docxtemplater.DocUtils.defaults</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.defaults.nullGetter" id="apidoc.element.docxtemplater.DocUtils.defaults.nullGetter">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.defaults.</span>nullGetter
+        <span class="apidocSignatureSpan">(part)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nullGetter(part) {
+		if (!part.module) {
+			return &#x22;undefined&#x22;;
+		}
+		if (part.module === &#x22;rawxml&#x22;) {
+			return &#x22;&#x22;;
+		}
+		return &#x22;&#x22;;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var moduleRendered = moduleRender(part, options);
+		if (moduleRendered) {
+			return moduleRendered.value;
+		}
+		if (part.type === &#x22;placeholder&#x22;) {
+			var value = options.scopeManager.getValue(part.value);
+			if (value == null) {
+				value = options.<span class="apidocCodeKeywordSpan">nullGetter</span>(part);
+			}
+			return DocUtils.utf8ToWord(value);
+		}
+		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+			return part.value;
+		}
+		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.defaults.parser" id="apidoc.element.docxtemplater.DocUtils.defaults.parser">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.defaults.</span>parser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cachedfun() {
+		var hash = stringifyJson(arguments);
+		return hash in cache ? cache[hash] : cache[hash] = func.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			// search in the scopes (in reverse order) and keep the first defined value
+			this.num = num == null ? this.scopeList.length - 1 : num;
+			var err = void 0;
+			var parser = void 0;
+			var result = void 0;
+			var scope = this.scopeList[this.num];
+			try {
+				parser = this.<span class="apidocCodeKeywordSpan">parser</span>(tag);
+			} catch (error) {
+				err = new Errors.XTScopeParserError(&#x22;Scope parser compilation failed&#x22;);
+				err.properties = {
+					id: &#x22;scopeparser_compilation_failed&#x22;,
+					tag: tag,
+					explanation: &#x22;The scope parser for the tag &#x22; + tag + &#x22; failed to compile&#x22;,
+					rootError: error
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.DocUtils.traits" id="apidoc.module.docxtemplater.DocUtils.traits">module docxtemplater.DocUtils.traits</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.traits.expandToOne" id="apidoc.element.docxtemplater.DocUtils.traits.expandToOne">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.traits.</span>expandToOne
+        <span class="apidocSignatureSpan">(postparsed, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function expandToOne(postparsed, options) {
+	var expandToElements = postparsed.reduce(function (elements, part) {
+		if (part.type === &#x22;placeholder&#x22; &#x26;&#x26; part.module === options.moduleName) {
+			elements.push(part);
+		}
+		return elements;
+	}, []);
+
+	expandToElements.forEach(function (part) {
+		postparsed = expandOne(part, postparsed, options);
+	});
+	return postparsed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.DocUtils.traits.getExpandToDefault" id="apidoc.element.docxtemplater.DocUtils.traits.getExpandToDefault">
+        function <span class="apidocSignatureSpan">docxtemplater.DocUtils.traits.</span>getExpandToDefault
+        <span class="apidocSignatureSpan">(parts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getExpandToDefault(parts) {
+	var xmlElements = getListXmlElements(parts);
+	for (var i = 0; i &#x3c; xmlElements.length; i++) {
+		var xmlElement = xmlElements[i];
+		if (xmlElement.tag.indexOf(&#x22;&#x3c;w:tc&#x22;) === 0) {
+			return &#x22;w:tr&#x22;;
+		}
+		if (xmlElement.tag.indexOf(&#x22;&#x3c;a:tc&#x22;) === 0) {
+			return &#x22;a:tr&#x22;;
+		}
+	}
+	return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.Errors" id="apidoc.module.docxtemplater.Errors">module docxtemplater.Errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.Errors.XTError" id="apidoc.element.docxtemplater.Errors.XTError">
+        function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XTError(message) {
+	this.name = &#x22;GenericError&#x22;;
+	this.message = message;
+	this.stack = new Error(message).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.Errors.XTInternalError" id="apidoc.element.docxtemplater.Errors.XTInternalError">
+        function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTInternalError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XTInternalError(message) {
+	this.name = &#x22;InternalError&#x22;;
+	this.properties = { explanation: &#x22;InternalError&#x22; };
+	this.message = message;
+	this.stack = new Error(message).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		this.load(content);
+	}
+
+	_createClass(XmlTemplater, [{
+		key: &#x22;load&#x22;,
+		value: function load(content) {
+			if (typeof content !== &#x22;string&#x22;) {
+				var err = new Errors.<span class="apidocCodeKeywordSpan">XTInternalError</span>(&#x22;Content must be a string&#x22;);
+				err.properties.id = &#x22;xmltemplater_content_must_be_string&#x22;;
+				throw err;
+			}
+			this.content = content;
+		}
+	}, {
+		key: &#x22;setTags&#x22;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.Errors.XTScopeParserError" id="apidoc.element.docxtemplater.Errors.XTScopeParserError">
+        function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTScopeParserError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XTScopeParserError(message) {
+	this.name = &#x22;ScopeParserError&#x22;;
+	this.message = message;
+	this.stack = new Error(message).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			var err = void 0;
+			var parser = void 0;
+			var result = void 0;
+			var scope = this.scopeList[this.num];
+			try {
+				parser = this.parser(tag);
+			} catch (error) {
+				err = new Errors.<span class="apidocCodeKeywordSpan">XTScopeParserError</span>(&#x22;Scope parser compilation failed&#x22;);
+				err.properties = {
+					id: &#x22;scopeparser_compilation_failed&#x22;,
+					tag: tag,
+					explanation: &#x22;The scope parser for the tag &#x22; + tag + &#x22; failed to compile&#x22;,
+					rootError: error
+				};
+				throw err;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.Errors.XTTemplateError" id="apidoc.element.docxtemplater.Errors.XTTemplateError">
+        function <span class="apidocSignatureSpan">docxtemplater.Errors.</span>XTTemplateError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function XTTemplateError(message) {
+	this.name = &#x22;TemplateError&#x22;;
+	this.message = message;
+	this.stack = new Error(message).stack;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		totalMatches.push({ type: &#x22;tag&#x22;, position: position, text: text, offset: offset, value: tagText });
+	}
+
+	return totalMatches;
+}
+
+function throwUnopenedTagException(options) {
+	var err = new Errors.<span class="apidocCodeKeywordSpan">XTTemplateError</span>(&#x22;Unopened tag&#x22;);
+	err.properties = {
+		xtag: options.xtag.split(&#x22; &#x22;)[0],
+		id: &#x22;unopened_tag&#x22;,
+		context: options.xtag,
+		explanation: &#x22;The tag beginning with &#x27;&#x22; + options.xtag.substr(0, 10) + &#x22;&#x27; is unclosed&#x22;
+	};
+	throw err;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.lexer" id="apidoc.module.docxtemplater.lexer">module docxtemplater.lexer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.lexer.parse" id="apidoc.element.docxtemplater.lexer.parse">
+        function <span class="apidocSignatureSpan">docxtemplater.lexer.</span>parse
+        <span class="apidocSignatureSpan">(xmlparsed, delimiters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(xmlparsed, delimiters) {
+		var inTextTag = false;
+		var innerContentParts = [];
+		xmlparsed.forEach(function (part) {
+			inTextTag = updateInTextTag(part, inTextTag);
+			if (inTextTag &#x26;&#x26; part.type === &#x22;content&#x22;) {
+				innerContentParts.push(part.value);
+			}
+		});
+		var reader = new Reader(innerContentParts);
+		reader.parseDelimiters(delimiters);
+
+		var newArray = [];
+		var index = 0;
+		xmlparsed.forEach(function (part) {
+			inTextTag = updateInTextTag(part, inTextTag);
+			if (part.type === &#x22;content&#x22;) {
+				part.position = inTextTag ? &#x22;insidetag&#x22; : &#x22;outsidetag&#x22;;
+			}
+			if (inTextTag &#x26;&#x26; part.type === &#x22;content&#x22;) {
+				Array.prototype.push.apply(newArray, reader.parsed[index].map(function (p) {
+					if (p.type === &#x22;content&#x22;) {
+						p.position = &#x22;insidetag&#x22;;
+					}
+					return p;
+				}));
+				index++;
+			} else {
+				newArray.push(part);
+			}
+		});
+		return newArray;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return postparse(parsed);
+	},
+	parse: function parse(lexed, modules) {
+		function moduleParse(placeHolderContent, parsed) {
+			var moduleParsed = void 0;
+			for (var i = 0, l = modules.length; i &#x3c; l; i++) {
+				var _module = modules[i];
+				moduleParsed = _module.<span class="apidocCodeKeywordSpan">parse</span>(placeHolderContent);
+				if (moduleParsed) {
+					parsed.push(moduleParsed);
+					return moduleParsed;
+				}
+			}
+			return null;
+		}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.lexer.xmlparse" id="apidoc.element.docxtemplater.lexer.xmlparse">
+        function <span class="apidocSignatureSpan">docxtemplater.lexer.</span>xmlparse
+        <span class="apidocSignatureSpan">(content, xmltags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function xmlparse(content, xmltags) {
+		var matches = tagMatcher(content, xmltags.text, xmltags.other);
+		var cursor = 0;
+		var parsed = matches.reduce(function (parsed, match) {
+			var value = content.substr(cursor, match.offset - cursor);
+			if (value.length &#x3e; 0) {
+				parsed.push({ type: &#x22;content&#x22;, value: value });
+			}
+			cursor = match.offset + match.value.length;
+			delete match.offset;
+			if (match.value.length &#x3e; 0) {
+				parsed.push(match);
+			}
+			return parsed;
+		}, []);
+		var value = content.substr(cursor);
+		if (value.length &#x3e; 0) {
+			parsed.push({ type: &#x22;content&#x22;, value: value });
+		}
+		return parsed;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			this.modules.forEach(function (module) {
+				module.set(obj);
+			});
+		}
+	}, {
+		key: &#x22;parse&#x22;,
+		value: function parse() {
+			this.xmllexed = Lexer.<span class="apidocCodeKeywordSpan">xmlparse</span>(this.content, { text: this.fileTypeConfig.tagsXmlTextArray
+, other: this.fileTypeConfig.tagsXmlLexedArray });
+			this.setModules({ inspect: { xmllexed: this.xmllexed } });
+			this.lexed = Lexer.parse(this.xmllexed, this.delimiters);
+			this.setModules({ inspect: { lexed: this.lexed } });
+			this.parsed = Parser.parse(this.lexed, this.modules);
+			this.setModules({ inspect: { parsed: this.parsed } });
+			this.postparsed = Parser.postparse(this.parsed, this.modules);
+			return this;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.parser" id="apidoc.module.docxtemplater.parser">module docxtemplater.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.parser.parse" id="apidoc.element.docxtemplater.parser.parse">
+        function <span class="apidocSignatureSpan">docxtemplater.parser.</span>parse
+        <span class="apidocSignatureSpan">(lexed, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parse(lexed, modules) {
+		function moduleParse(placeHolderContent, parsed) {
+			var moduleParsed = void 0;
+			for (var i = 0, l = modules.length; i &#x3c; l; i++) {
+				var _module = modules[i];
+				moduleParsed = _module.parse(placeHolderContent);
+				if (moduleParsed) {
+					parsed.push(moduleParsed);
+					return moduleParsed;
+				}
+			}
+			return null;
+		}
+
+		var inPlaceHolder = false;
+		var placeHolderContent = void 0;
+		var tailParts = [];
+		return lexed.reduce(function (parsed, token) {
+			if (token.type === &#x22;delimiter&#x22;) {
+				inPlaceHolder = token.position === &#x22;start&#x22;;
+				if (token.position === &#x22;end&#x22;) {
+					placeHolderContent = DocUtils.wordToUtf8(placeHolderContent);
+					if (!moduleParse(placeHolderContent, parsed)) {
+						parsed.push({ type: &#x22;placeholder&#x22;, value: placeHolderContent });
+					}
+					Array.prototype.push.apply(parsed, tailParts);
+					tailParts = [];
+					return parsed;
+				}
+				placeHolderContent = &#x22;&#x22;;
+				return parsed;
+			}
+			if (inPlaceHolder) {
+				if (token.type === &#x22;content&#x22; &#x26;&#x26; token.position === &#x22;insidetag&#x22;) {
+					placeHolderContent += token.value;
+				} else {
+					tailParts.push(token);
+				}
+				return parsed;
+			}
+			parsed.push(token);
+			return parsed;
+		}, []);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return postparse(parsed);
+	},
+	parse: function parse(lexed, modules) {
+		function moduleParse(placeHolderContent, parsed) {
+			var moduleParsed = void 0;
+			for (var i = 0, l = modules.length; i &#x3c; l; i++) {
+				var _module = modules[i];
+				moduleParsed = _module.<span class="apidocCodeKeywordSpan">parse</span>(placeHolderContent);
+				if (moduleParsed) {
+					parsed.push(moduleParsed);
+					return moduleParsed;
+				}
+			}
+			return null;
+		}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.parser.postparse" id="apidoc.element.docxtemplater.parser.postparse">
+        function <span class="apidocSignatureSpan">docxtemplater.parser.</span>postparse
+        <span class="apidocSignatureSpan">(parsed, modules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function postparse(parsed, modules) {
+		function getTraits(traitName, parsed) {
+			return modules.map(function (module) {
+				return module.getTraits(traitName, parsed);
+			});
+		}
+		function postparse(parsed) {
+			return modules.reduce(function (parsed, module) {
+				return module.postparse(parsed, { postparse: postparse, getTraits: getTraits });
+			}, parsed);
+		}
+		return postparse(parsed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		function getTraits(traitName, parsed) {
+			return modules.map(function (module) {
+				return module.getTraits(traitName, parsed);
+			});
+		}
+		function postparse(parsed) {
+			return modules.reduce(function (parsed, module) {
+				return module.<span class="apidocCodeKeywordSpan">postparse</span>(parsed, { postparse: postparse, getTraits: getTraits });
+			}, parsed);
+		}
+		return postparse(parsed);
+	},
+	parse: function parse(lexed, modules) {
+		function moduleParse(placeHolderContent, parsed) {
+			var moduleParsed = void 0;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docxtemplater.scope_manager" id="apidoc.module.docxtemplater.scope_manager">module docxtemplater.scope_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.scope_manager.scope_manager" id="apidoc.element.docxtemplater.scope_manager.scope_manager">
+        function <span class="apidocSignatureSpan">docxtemplater.</span>scope_manager
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ScopeManager(options) {
+		_classCallCheck(this, ScopeManager);
+
+		this.scopePath = options.scopePath;
+		this.scopeList = options.scopeList;
+		this.parser = options.parser;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docxtemplater.scope_manager.createBaseScopeManager" id="apidoc.element.docxtemplater.scope_manager.createBaseScopeManager">
+        function <span class="apidocSignatureSpan">docxtemplater.scope_manager.</span>createBaseScopeManager
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createBaseScopeManager = function (_ref) {
+	var parser = _ref.parser,
+	    tags = _ref.tags;
+
+	var options = { parser: parser, tags: tags };
+	options.scopePath = [];
+	options.scopeList = [tags];
+	return new ScopeManager(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	return false;
+}
+
+function render(options) {
+	options.render = render;
+	options.modules = options.modules;
+	if (!options.scopeManager) {
+		options.scopeManager = ScopeManager.<span class="apidocCodeKeywordSpan">createBaseScopeManager</span>(options);
+	}
+	return options.compiled.map(function (part) {
+		var moduleRendered = moduleRender(part, options);
+		if (moduleRendered) {
+			return moduleRendered.value;
+		}
+		if (part.type === &#x22;placeholder&#x22;) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
