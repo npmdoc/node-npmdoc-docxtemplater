@@ -1,34 +1,34 @@
 <svg height="494" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="494" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-04 19:28:31 +0000   303976 byte  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-04 19:28:31 +0000     8293 byte  CHANGELOG.md</tspan>
-<tspan x="10" y="58">  2.  2017-04-04 19:28:31 +0000   114191 byte  build/docxtemplater.js</tspan>
-<tspan x="10" y="74">  3.  2017-04-04 19:28:31 +0000    82990 byte  build/docxtemplater.min.js</tspan>
-<tspan x="10" y="90">  4.  2017-04-04 19:28:31 +0000     1672 byte  contributing.md</tspan>
-<tspan x="10" y="106">  5.  2017-04-04 19:28:31 +0000      916 byte  create-min.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-04 19:28:31 +0000     2905 byte  js/cli.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-04 19:28:31 +0000     4933 byte  js/doc-utils.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-04 19:28:31 +0000     5894 byte  js/docxtemplater.js</tspan>
-<tspan x="10" y="170">  9.  2017-04-04 19:28:31 +0000      920 byte  js/errors.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-04 19:28:31 +0000     1400 byte  js/file-type-config.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-04 19:28:31 +0000     7042 byte  js/lexer.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-04 19:28:31 +0000      289 byte  js/memoize.js</tspan>
-<tspan x="10" y="234"> 13.  2017-04-04 19:28:31 +0000      912 byte  js/mergesort.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-04 19:28:31 +0000      604 byte  js/module-wrapper.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-04 19:28:31 +0000     3662 byte  js/modules/expand-pair-trait.js</tspan>
-<tspan x="10" y="282"> 16.  2017-04-04 19:28:31 +0000     2020 byte  js/modules/loop.js</tspan>
-<tspan x="10" y="298"> 17.  2017-04-04 19:28:31 +0000     2936 byte  js/modules/rawxml.js</tspan>
-<tspan x="10" y="314"> 18.  2017-04-04 19:28:31 +0000     1433 byte  js/modules/render.js</tspan>
-<tspan x="10" y="330"> 19.  2017-04-04 19:28:31 +0000      911 byte  js/modules/space-preserve.js</tspan>
-<tspan x="10" y="346"> 20.  2017-04-04 19:28:31 +0000     1751 byte  js/parser.js</tspan>
-<tspan x="10" y="362"> 21.  2017-04-04 19:28:31 +0000     1137 byte  js/render.js</tspan>
-<tspan x="10" y="378"> 22.  2017-04-04 19:28:31 +0000     4136 byte  js/scope-manager.js</tspan>
-<tspan x="10" y="394"> 23.  2017-04-04 19:28:31 +0000     3507 byte  js/traits.js</tspan>
-<tspan x="10" y="410"> 24.  2017-04-04 19:28:31 +0000     2782 byte  js/xml-matcher.js</tspan>
-<tspan x="10" y="426"> 25.  2017-04-04 19:28:31 +0000     3786 byte  js/xml-templater.js</tspan>
-<tspan x="10" y="442"> 26.  2017-04-04 19:28:31 +0000    33685 byte  license.md</tspan>
-<tspan x="10" y="458"> 27.  2017-04-04 19:28:31 +0000     4595 byte  package.json</tspan>
-<tspan x="10" y="474"> 28.  2017-04-04 19:28:31 +0000     4674 byte  readme.md</tspan>
+<tspan x="10" y="26">  0.  2017-04-04 19:29:47 +0000   303976 byte  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-04 19:29:47 +0000     8293 byte  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-04 19:29:47 +0000   114191 byte  build/docxtemplater.js</tspan>
+<tspan x="10" y="74">  3.  2017-04-04 19:29:47 +0000    82990 byte  build/docxtemplater.min.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-04 19:29:47 +0000     1672 byte  contributing.md</tspan>
+<tspan x="10" y="106">  5.  2017-04-04 19:29:47 +0000      916 byte  create-min.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-04 19:29:47 +0000     2905 byte  js/cli.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-04 19:29:47 +0000     4933 byte  js/doc-utils.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-04 19:29:47 +0000     5894 byte  js/docxtemplater.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-04 19:29:47 +0000      920 byte  js/errors.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-04 19:29:47 +0000     1400 byte  js/file-type-config.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-04 19:29:47 +0000     7042 byte  js/lexer.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-04 19:29:47 +0000      289 byte  js/memoize.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-04 19:29:47 +0000      912 byte  js/mergesort.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-04 19:29:47 +0000      604 byte  js/module-wrapper.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-04 19:29:47 +0000     3662 byte  js/modules/expand-pair-trait.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-04 19:29:47 +0000     2020 byte  js/modules/loop.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-04 19:29:47 +0000     2936 byte  js/modules/rawxml.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-04 19:29:47 +0000     1433 byte  js/modules/render.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-04 19:29:47 +0000      911 byte  js/modules/space-preserve.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-04 19:29:47 +0000     1751 byte  js/parser.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-04 19:29:47 +0000     1137 byte  js/render.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-04 19:29:47 +0000     4136 byte  js/scope-manager.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-04 19:29:47 +0000     3507 byte  js/traits.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-04 19:29:47 +0000     2782 byte  js/xml-matcher.js</tspan>
+<tspan x="10" y="426"> 25.  2017-04-04 19:29:47 +0000     3786 byte  js/xml-templater.js</tspan>
+<tspan x="10" y="442"> 26.  2017-04-04 19:29:47 +0000    33685 byte  license.md</tspan>
+<tspan x="10" y="458"> 27.  2017-04-04 19:29:47 +0000     4595 byte  package.json</tspan>
+<tspan x="10" y="474"> 28.  2017-04-04 19:29:47 +0000     4674 byte  readme.md</tspan>
 </text>
 </svg>
