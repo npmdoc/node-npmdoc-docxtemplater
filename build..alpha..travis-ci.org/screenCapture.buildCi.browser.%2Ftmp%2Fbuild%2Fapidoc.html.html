@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/open-xml-templating/docxtemplater#readme"
-
-    >docxtemplater (v3.0.11)</a>
+    <a href="https://github.com/open-xml-templating/docxtemplater#readme">docxtemplater (v3.0.11)</a>
 </h1>
 <h4>.docx generator working with templates and data (like Mustache)</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.docxtemplater">module docxtemplater</a><ol>
 
@@ -1039,8 +1032,8 @@
     <li>description and source-code<pre class="apidocCodePre">function Docxtemplater() {
 		_classCallCheck(this, Docxtemplater);
 
-		if (arguments.length &#x3e; 0) {
-			throw new Error(&#x22;The constructor with parameters have been removed in docxtemplater 3.0, please check the upgrade guide.&#x22;);
+		if (arguments.length &gt; 0) {
+			throw new Error("The constructor with parameters have been removed in docxtemplater 3.0, please check the upgrade guide.");
 		}
 		this.compiled = {};
 		this.modules = [];
@@ -1092,7 +1085,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.convertSpaces = function (s) {
-	return s.replace(spaceRegexp, &#x22; &#x22;);
+	return s.replace(spaceRegexp, " ");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1114,9 +1107,9 @@
 		// replace Ascii 160 space by the normal space, Ascii 32
 		return decodeURIComponent(escape(DocUtils.convertSpaces(s)));
 	} catch (e) {
-		var err = new Error(&#x22;End&#x22;);
+		var err = new Error("End");
 		err.properties.data = s;
-		err.properties.explanation = &#x22;Could not decode string to UTF8&#x22;;
+		err.properties.explanation = "Could not decode string to UTF8";
 		throw err;
 	}
 }</pre></li>
@@ -1148,7 +1141,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.escapeRegExp = function (str) {
-	return str.replace(regexStripRegexp, &#x22;\\$&#x26;&#x22;);
+	return str.replace(regexStripRegexp, "\\$&amp;");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1163,13 +1156,13 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.getLeft = function (parsed, element, index) {
-	for (var i = index; i &#x3e;= 0; i--) {
+	for (var i = index; i &gt;= 0; i--) {
 		var part = parsed[i];
-		if (part.value.indexOf(&#x22;&#x3c;&#x22; + element) === 0 &#x26;&#x26; [&#x22;&#x3e;&#x22;, &#x22; &#x22;].indexOf(part.value[element.length + 1]) !== -1) {
+		if (part.value.indexOf("&lt;" + element) === 0 &amp;&amp; ["&gt;", " "].indexOf(part.value[element.length + 1]) !== -1) {
 			return i;
 		}
 	}
-	throwXmlTagNotFound({ position: &#x22;left&#x22;, element: element, parsed: parsed, index: index });
+	throwXmlTagNotFound({ position: "left", element: element, parsed: parsed, index: index });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1184,13 +1177,13 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.getRight = function (parsed, element, index) {
-	for (var i = index, l = parsed.length; i &#x3c; l; i++) {
+	for (var i = index, l = parsed.length; i &lt; l; i++) {
 		var part = parsed[i];
-		if (part.value === &#x22;&#x3c;/&#x22; + element + &#x22;&#x3e;&#x22;) {
+		if (part.value === "&lt;/" + element + "&gt;") {
 			return i;
 		}
 	}
-	throwXmlTagNotFound({ position: &#x22;right&#x22;, element: element, parsed: parsed, index: index });
+	throwXmlTagNotFound({ position: "right", element: element, parsed: parsed, index: index });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1208,10 +1201,10 @@
 	var resObj = {};
 	var obj = void 0,
 	    keys = void 0;
-	for (var i = 0; i &#x3c; arguments.length; i += 1) {
+	for (var i = 0; i &lt; arguments.length; i += 1) {
 		obj = arguments[i];
 		keys = Object.keys(obj);
-		for (var j = 0; j &#x3c; keys.length; j += 1) {
+		for (var j = 0; j &lt; keys.length; j += 1) {
 			resObj[keys[j]] = obj[keys[j]];
 		}
 	}
@@ -1242,7 +1235,7 @@
 	if (Object.keys(defaults).every(function (key) {
 		return !module[key];
 	})) {
-		throw new Error(&#x22;This module cannot be wrapped, because it doesn&#x27;t define any of the necessary functions&#x22;);
+		throw new Error("This module cannot be wrapped, because it doesn't define any of the necessary functions");
 	}
 	Object.keys(defaults).forEach(function (key) {
 		module[key] = module[key] || defaults[key];
@@ -1265,7 +1258,7 @@
 	<span class="apidocCodeCommentSpan">/* regex is a string, content is the content. It returns an array of all matches with their offset, for example:
  	 regex=la
  	 content=lolalolilala
- returns: [{array: {0: &#x27;la&#x27;},offset: 2},{array: {0: &#x27;la&#x27;},offset: 8},{array: {0: &#x27;la&#x27;} ,offset: 10}]
+ returns: [{array: {0: 'la'},offset: 2},{array: {0: 'la'},offset: 8},{array: {0: 'la'} ,offset: 10}]
  */
 </span>	var matchArray = [];
 	var match = void 0;
@@ -1303,7 +1296,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.str2xml = function (str, errorHandler) {
 	var parser = new DOMParser({ errorHandler: errorHandler });
-	return parser.parseFromString(str, &#x22;text/xml&#x22;);
+	return parser.parseFromString(str, "text/xml");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1318,11 +1311,11 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.utf8ToWord = function (string) {
-	if (typeof string !== &#x22;string&#x22;) {
+	if (typeof string !== "string") {
 		string = string.toString();
 	}
 	var r = void 0;
-	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &lt; l; i++) {
 		r = DocUtils.charMapRegexes[i];
 		string = string.replace(r.rend, r.start);
 	}
@@ -1342,7 +1335,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">DocUtils.wordToUtf8 = function (string) {
 	var r = void 0;
-	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &lt; l; i++) {
 		r = DocUtils.charMapRegexes[i];
 		string = string.replace(r.rstart, r.end);
 	}
@@ -1377,7 +1370,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTError(message) {
-	this.name = &#x22;GenericError&#x22;;
+	this.name = "GenericError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -1394,8 +1387,8 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTInternalError(message) {
-	this.name = &#x22;InternalError&#x22;;
-	this.properties = { explanation: &#x22;InternalError&#x22; };
+	this.name = "InternalError";
+	this.properties = { explanation: "InternalError" };
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -1412,7 +1405,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTScopeParserError(message) {
-	this.name = &#x22;ScopeParserError&#x22;;
+	this.name = "ScopeParserError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -1429,7 +1422,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTTemplateError(message) {
-	this.name = &#x22;TemplateError&#x22;;
+	this.name = "TemplateError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -1505,7 +1498,7 @@
 		return sum + array.length;
 	}, 0);
 	arrays = arrays.filter(function (array) {
-		return array.length &#x3e; 0;
+		return array.length &gt; 0;
 	});
 
 	var resultArray = new Array(totalLength);
@@ -1516,7 +1509,7 @@
 
 	var i = 0;
 
-	while (i &#x3c;= totalLength - 1) {
+	while (i &lt;= totalLength - 1) {
 		var arrayIndex = getMinFromArrays(arrays, state);
 		resultArray[i] = arrays[arrayIndex][state[arrayIndex]];
 		state[arrayIndex]++;
@@ -1548,26 +1541,26 @@
 		if (moduleRendered) {
 			return moduleRendered.value;
 		}
-		if (part.type === &#x22;placeholder&#x22;) {
+		if (part.type === "placeholder") {
 			var value = options.scopeManager.getValue(part.value);
 			if (value == null) {
 				value = options.nullGetter(part);
 			}
 			return DocUtils.utf8ToWord(value);
 		}
-		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+		if (part.type === "content" || part.type === "tag") {
 			return part.value;
 		}
-		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
-	}).join(&#x22;&#x22;);
+		throw new Error("Unimplemented tag type \"" + part.type + "\"");
+	}).join("");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var ScopeManager = require(&#x22;./scope-manager&#x22;);
-var DocUtils = require(&#x22;./doc-utils&#x22;);
+var ScopeManager = require("./scope-manager");
+var DocUtils = require("./doc-utils");
 
 function moduleRender(part, options) {
 	var moduleRendered = void 0;
-	for (var i = 0, l = options.modules.length; i &#x3c; l; i++) {
+	for (var i = 0, l = options.modules.length; i &lt; l; i++) {
 		var _module = options.modules[i];
 		moduleRendered = _module.<span class="apidocCodeKeywordSpan">render</span>(part, options);
 		if (moduleRendered) {
@@ -1663,7 +1656,7 @@ function moduleRender(part, options) {
 	}, []);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-		position: start === 1 ? &#x22;start&#x22; : &#x22;end&#x22;
+		position: start === 1 ? "start" : "end"
 	};
 }
 
@@ -1691,7 +1684,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">convertSpaces = function (s) {
-	return s.replace(spaceRegexp, &#x22; &#x22;);
+	return s.replace(spaceRegexp, " ");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1713,9 +1706,9 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 		// replace Ascii 160 space by the normal space, Ascii 32
 		return decodeURIComponent(escape(DocUtils.convertSpaces(s)));
 	} catch (e) {
-		var err = new Error(&#x22;End&#x22;);
+		var err = new Error("End");
 		err.properties.data = s;
-		err.properties.explanation = &#x22;Could not decode string to UTF8&#x22;;
+		err.properties.explanation = "Could not decode string to UTF8";
 		throw err;
 	}
 }</pre></li>
@@ -1747,7 +1740,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">escapeRegExp = function (str) {
-	return str.replace(regexStripRegexp, &#x22;\\$&#x26;&#x22;);
+	return str.replace(regexStripRegexp, "\\$&amp;");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1762,13 +1755,13 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getLeft = function (parsed, element, index) {
-	for (var i = index; i &#x3e;= 0; i--) {
+	for (var i = index; i &gt;= 0; i--) {
 		var part = parsed[i];
-		if (part.value.indexOf(&#x22;&#x3c;&#x22; + element) === 0 &#x26;&#x26; [&#x22;&#x3e;&#x22;, &#x22; &#x22;].indexOf(part.value[element.length + 1]) !== -1) {
+		if (part.value.indexOf("&lt;" + element) === 0 &amp;&amp; ["&gt;", " "].indexOf(part.value[element.length + 1]) !== -1) {
 			return i;
 		}
 	}
-	throwXmlTagNotFound({ position: &#x22;left&#x22;, element: element, parsed: parsed, index: index });
+	throwXmlTagNotFound({ position: "left", element: element, parsed: parsed, index: index });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1783,13 +1776,13 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getRight = function (parsed, element, index) {
-	for (var i = index, l = parsed.length; i &#x3c; l; i++) {
+	for (var i = index, l = parsed.length; i &lt; l; i++) {
 		var part = parsed[i];
-		if (part.value === &#x22;&#x3c;/&#x22; + element + &#x22;&#x3e;&#x22;) {
+		if (part.value === "&lt;/" + element + "&gt;") {
 			return i;
 		}
 	}
-	throwXmlTagNotFound({ position: &#x22;right&#x22;, element: element, parsed: parsed, index: index });
+	throwXmlTagNotFound({ position: "right", element: element, parsed: parsed, index: index });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1807,10 +1800,10 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	var resObj = {};
 	var obj = void 0,
 	    keys = void 0;
-	for (var i = 0; i &#x3c; arguments.length; i += 1) {
+	for (var i = 0; i &lt; arguments.length; i += 1) {
 		obj = arguments[i];
 		keys = Object.keys(obj);
-		for (var j = 0; j &#x3c; keys.length; j += 1) {
+		for (var j = 0; j &lt; keys.length; j += 1) {
 			resObj[keys[j]] = obj[keys[j]];
 		}
 	}
@@ -1841,7 +1834,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	if (Object.keys(defaults).every(function (key) {
 		return !module[key];
 	})) {
-		throw new Error(&#x22;This module cannot be wrapped, because it doesn&#x27;t define any of the necessary functions&#x22;);
+		throw new Error("This module cannot be wrapped, because it doesn't define any of the necessary functions");
 	}
 	Object.keys(defaults).forEach(function (key) {
 		module[key] = module[key] || defaults[key];
@@ -1864,7 +1857,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	<span class="apidocCodeCommentSpan">/* regex is a string, content is the content. It returns an array of all matches with their offset, for example:
  	 regex=la
  	 content=lolalolilala
- returns: [{array: {0: &#x27;la&#x27;},offset: 2},{array: {0: &#x27;la&#x27;},offset: 8},{array: {0: &#x27;la&#x27;} ,offset: 10}]
+ returns: [{array: {0: 'la'},offset: 2},{array: {0: 'la'},offset: 8},{array: {0: 'la'} ,offset: 10}]
  */
 </span>	var matchArray = [];
 	var match = void 0;
@@ -1902,7 +1895,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">str2xml = function (str, errorHandler) {
 	var parser = new DOMParser({ errorHandler: errorHandler });
-	return parser.parseFromString(str, &#x22;text/xml&#x22;);
+	return parser.parseFromString(str, "text/xml");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1917,11 +1910,11 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">utf8ToWord = function (string) {
-	if (typeof string !== &#x22;string&#x22;) {
+	if (typeof string !== "string") {
 		string = string.toString();
 	}
 	var r = void 0;
-	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &lt; l; i++) {
 		r = DocUtils.charMapRegexes[i];
 		string = string.replace(r.rend, r.start);
 	}
@@ -1930,18 +1923,18 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <li>example usage<pre class="apidocCodePre">...
 			return moduleRendered.value;
 		}
-		if (part.type === &#x22;placeholder&#x22;) {
+		if (part.type === "placeholder") {
 			var value = options.scopeManager.getValue(part.value);
 			if (value == null) {
 				value = options.nullGetter(part);
 			}
 			return DocUtils.<span class="apidocCodeKeywordSpan">utf8ToWord</span>(value);
 		}
-		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+		if (part.type === "content" || part.type === "tag") {
 			return part.value;
 		}
-		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
-	}).join(&#x22;&#x22;);
+		throw new Error("Unimplemented tag type \"" + part.type + "\"");
+	}).join("");
 }
 ...</pre></li>
     </ul>
@@ -1957,7 +1950,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">wordToUtf8 = function (string) {
 	var r = void 0;
-	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &lt; l; i++) {
 		r = DocUtils.charMapRegexes[i];
 		string = string.replace(r.rstart, r.end);
 	}
@@ -1968,12 +1961,12 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 		var placeHolderContent = void 0;
 		var tailParts = [];
 		return lexed.reduce(function (parsed, token) {
-			if (token.type === &#x22;delimiter&#x22;) {
-				inPlaceHolder = token.position === &#x22;start&#x22;;
-				if (token.position === &#x22;end&#x22;) {
+			if (token.type === "delimiter") {
+				inPlaceHolder = token.position === "start";
+				if (token.position === "end") {
 					placeHolderContent = DocUtils.<span class="apidocCodeKeywordSpan">wordToUtf8</span>(placeHolderContent);
 					if (!moduleParse(placeHolderContent, parsed)) {
-						parsed.push({ type: &#x22;placeholder&#x22;, value: placeHolderContent });
+						parsed.push({ type: "placeholder", value: placeHolderContent });
 					}
 					Array.prototype.push.apply(parsed, tailParts);
 					tailParts = [];
@@ -2047,7 +2040,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	}, []);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-		position: start === 1 ? &#x22;start&#x22; : &#x22;end&#x22;
+		position: start === 1 ? "start" : "end"
 	};
 }
 
@@ -2080,7 +2073,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">convertSpaces = function (s) {
-	return s.replace(spaceRegexp, &#x22; &#x22;);
+	return s.replace(spaceRegexp, " ");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2107,9 +2100,9 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 		// replace Ascii 160 space by the normal space, Ascii 32
 		return decodeURIComponent(escape(DocUtils.convertSpaces(s)));
 	} catch (e) {
-		var err = new Error(&#x22;End&#x22;);
+		var err = new Error("End");
 		err.properties.data = s;
-		err.properties.explanation = &#x22;Could not decode string to UTF8&#x22;;
+		err.properties.explanation = "Could not decode string to UTF8";
 		throw err;
 	}
 }</pre></li>
@@ -2132,29 +2125,29 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function nullGetter(part) {
 		if (!part.module) {
-			return &#x22;undefined&#x22;;
+			return "undefined";
 		}
-		if (part.module === &#x22;rawxml&#x22;) {
-			return &#x22;&#x22;;
+		if (part.module === "rawxml") {
+			return "";
 		}
-		return &#x22;&#x22;;
+		return "";
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 		var moduleRendered = moduleRender(part, options);
 		if (moduleRendered) {
 			return moduleRendered.value;
 		}
-		if (part.type === &#x22;placeholder&#x22;) {
+		if (part.type === "placeholder") {
 			var value = options.scopeManager.getValue(part.value);
 			if (value == null) {
 				value = options.<span class="apidocCodeKeywordSpan">nullGetter</span>(part);
 			}
 			return DocUtils.utf8ToWord(value);
 		}
-		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+		if (part.type === "content" || part.type === "tag") {
 			return part.value;
 		}
-		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
+		throw new Error("Unimplemented tag type \"" + part.type + "\"");
 ...</pre></li>
     </ul>
 
@@ -2181,11 +2174,11 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 			try {
 				parser = this.<span class="apidocCodeKeywordSpan">parser</span>(tag);
 			} catch (error) {
-				err = new Errors.XTScopeParserError(&#x22;Scope parser compilation failed&#x22;);
+				err = new Errors.XTScopeParserError("Scope parser compilation failed");
 				err.properties = {
-					id: &#x22;scopeparser_compilation_failed&#x22;,
+					id: "scopeparser_compilation_failed",
 					tag: tag,
-					explanation: &#x22;The scope parser for the tag &#x22; + tag + &#x22; failed to compile&#x22;,
+					explanation: "The scope parser for the tag " + tag + " failed to compile",
 					rootError: error
 ...</pre></li>
     </ul>
@@ -2227,7 +2220,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">escapeRegExp = function (str) {
-	return str.replace(regexStripRegexp, &#x22;\\$&#x26;&#x22;);
+	return str.replace(regexStripRegexp, "\\$&amp;");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2247,13 +2240,13 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getLeft = function (parsed, element, index) {
-	for (var i = index; i &#x3e;= 0; i--) {
+	for (var i = index; i &gt;= 0; i--) {
 		var part = parsed[i];
-		if (part.value.indexOf(&#x22;&#x3c;&#x22; + element) === 0 &#x26;&#x26; [&#x22;&#x3e;&#x22;, &#x22; &#x22;].indexOf(part.value[element.length + 1]) !== -1) {
+		if (part.value.indexOf("&lt;" + element) === 0 &amp;&amp; ["&gt;", " "].indexOf(part.value[element.length + 1]) !== -1) {
 			return i;
 		}
 	}
-	throwXmlTagNotFound({ position: &#x22;left&#x22;, element: element, parsed: parsed, index: index });
+	throwXmlTagNotFound({ position: "left", element: element, parsed: parsed, index: index });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2273,13 +2266,13 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getRight = function (parsed, element, index) {
-	for (var i = index, l = parsed.length; i &#x3c; l; i++) {
+	for (var i = index, l = parsed.length; i &lt; l; i++) {
 		var part = parsed[i];
-		if (part.value === &#x22;&#x3c;/&#x22; + element + &#x22;&#x3e;&#x22;) {
+		if (part.value === "&lt;/" + element + "&gt;") {
 			return i;
 		}
 	}
-	throwXmlTagNotFound({ position: &#x22;right&#x22;, element: element, parsed: parsed, index: index });
+	throwXmlTagNotFound({ position: "right", element: element, parsed: parsed, index: index });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2302,10 +2295,10 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	var resObj = {};
 	var obj = void 0,
 	    keys = void 0;
-	for (var i = 0; i &#x3c; arguments.length; i += 1) {
+	for (var i = 0; i &lt; arguments.length; i += 1) {
 		obj = arguments[i];
 		keys = Object.keys(obj);
-		for (var j = 0; j &#x3c; keys.length; j += 1) {
+		for (var j = 0; j &lt; keys.length; j += 1) {
 			resObj[keys[j]] = obj[keys[j]];
 		}
 	}
@@ -2341,7 +2334,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	if (Object.keys(defaults).every(function (key) {
 		return !module[key];
 	})) {
-		throw new Error(&#x22;This module cannot be wrapped, because it doesn&#x27;t define any of the necessary functions&#x22;);
+		throw new Error("This module cannot be wrapped, because it doesn't define any of the necessary functions");
 	}
 	Object.keys(defaults).forEach(function (key) {
 		module[key] = module[key] || defaults[key];
@@ -2369,7 +2362,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 	<span class="apidocCodeCommentSpan">/* regex is a string, content is the content. It returns an array of all matches with their offset, for example:
  	 regex=la
  	 content=lolalolilala
- returns: [{array: {0: &#x27;la&#x27;},offset: 2},{array: {0: &#x27;la&#x27;},offset: 8},{array: {0: &#x27;la&#x27;} ,offset: 10}]
+ returns: [{array: {0: 'la'},offset: 2},{array: {0: 'la'},offset: 8},{array: {0: 'la'} ,offset: 10}]
  */
 </span>	var matchArray = [];
 	var match = void 0;
@@ -2417,7 +2410,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">str2xml = function (str, errorHandler) {
 	var parser = new DOMParser({ errorHandler: errorHandler });
-	return parser.parseFromString(str, &#x22;text/xml&#x22;);
+	return parser.parseFromString(str, "text/xml");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2438,7 +2431,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function expandToOne(postparsed, options) {
 	var expandToElements = postparsed.reduce(function (elements, part) {
-		if (part.type === &#x22;placeholder&#x22; &#x26;&#x26; part.module === options.moduleName) {
+		if (part.type === "placeholder" &amp;&amp; part.module === options.moduleName) {
 			elements.push(part);
 		}
 		return elements;
@@ -2463,13 +2456,13 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getExpandToDefault(parts) {
 	var xmlElements = getListXmlElements(parts);
-	for (var i = 0; i &#x3c; xmlElements.length; i++) {
+	for (var i = 0; i &lt; xmlElements.length; i++) {
 		var xmlElement = xmlElements[i];
-		if (xmlElement.tag.indexOf(&#x22;&#x3c;w:tc&#x22;) === 0) {
-			return &#x22;w:tr&#x22;;
+		if (xmlElement.tag.indexOf("&lt;w:tc") === 0) {
+			return "w:tr";
 		}
-		if (xmlElement.tag.indexOf(&#x22;&#x3c;a:tc&#x22;) === 0) {
-			return &#x22;a:tr&#x22;;
+		if (xmlElement.tag.indexOf("&lt;a:tc") === 0) {
+			return "a:tr";
 		}
 	}
 	return false;
@@ -2492,11 +2485,11 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">utf8ToWord = function (string) {
-	if (typeof string !== &#x22;string&#x22;) {
+	if (typeof string !== "string") {
 		string = string.toString();
 	}
 	var r = void 0;
-	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &lt; l; i++) {
 		r = DocUtils.charMapRegexes[i];
 		string = string.replace(r.rend, r.start);
 	}
@@ -2505,18 +2498,18 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <li>example usage<pre class="apidocCodePre">...
 			return moduleRendered.value;
 		}
-		if (part.type === &#x22;placeholder&#x22;) {
+		if (part.type === "placeholder") {
 			var value = options.scopeManager.getValue(part.value);
 			if (value == null) {
 				value = options.nullGetter(part);
 			}
 			return DocUtils.<span class="apidocCodeKeywordSpan">utf8ToWord</span>(value);
 		}
-		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+		if (part.type === "content" || part.type === "tag") {
 			return part.value;
 		}
-		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
-	}).join(&#x22;&#x22;);
+		throw new Error("Unimplemented tag type \"" + part.type + "\"");
+	}).join("");
 }
 ...</pre></li>
     </ul>
@@ -2537,7 +2530,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">wordToUtf8 = function (string) {
 	var r = void 0;
-	for (var i = 0, l = DocUtils.charMapRegexes.length; i &#x3c; l; i++) {
+	for (var i = 0, l = DocUtils.charMapRegexes.length; i &lt; l; i++) {
 		r = DocUtils.charMapRegexes[i];
 		string = string.replace(r.rstart, r.end);
 	}
@@ -2548,12 +2541,12 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 		var placeHolderContent = void 0;
 		var tailParts = [];
 		return lexed.reduce(function (parsed, token) {
-			if (token.type === &#x22;delimiter&#x22;) {
-				inPlaceHolder = token.position === &#x22;start&#x22;;
-				if (token.position === &#x22;end&#x22;) {
+			if (token.type === "delimiter") {
+				inPlaceHolder = token.position === "start";
+				if (token.position === "end") {
 					placeHolderContent = DocUtils.<span class="apidocCodeKeywordSpan">wordToUtf8</span>(placeHolderContent);
 					if (!moduleParse(placeHolderContent, parsed)) {
-						parsed.push({ type: &#x22;placeholder&#x22;, value: placeHolderContent });
+						parsed.push({ type: "placeholder", value: placeHolderContent });
 					}
 					Array.prototype.push.apply(parsed, tailParts);
 					tailParts = [];
@@ -2598,7 +2591,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTError(message) {
-	this.name = &#x22;GenericError&#x22;;
+	this.name = "GenericError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -2615,8 +2608,8 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTInternalError(message) {
-	this.name = &#x22;InternalError&#x22;;
-	this.properties = { explanation: &#x22;InternalError&#x22; };
+	this.name = "InternalError";
+	this.properties = { explanation: "InternalError" };
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -2633,7 +2626,7 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTScopeParserError(message) {
-	this.name = &#x22;ScopeParserError&#x22;;
+	this.name = "ScopeParserError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -2645,11 +2638,11 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
 			try {
 				parser = this.parser(tag);
 			} catch (error) {
-				err = new Errors.<span class="apidocCodeKeywordSpan">XTScopeParserError</span>(&#x22;Scope parser compilation failed&#x22;);
+				err = new Errors.<span class="apidocCodeKeywordSpan">XTScopeParserError</span>("Scope parser compilation failed");
 				err.properties = {
-					id: &#x22;scopeparser_compilation_failed&#x22;,
+					id: "scopeparser_compilation_failed",
 					tag: tag,
-					explanation: &#x22;The scope parser for the tag &#x22; + tag + &#x22; failed to compile&#x22;,
+					explanation: "The scope parser for the tag " + tag + " failed to compile",
 					rootError: error
 				};
 				throw err;
@@ -2666,24 +2659,24 @@ function tagMatcher(content, textMatchArray, othersMatchArray) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTTemplateError(message) {
-	this.name = &#x22;TemplateError&#x22;;
+	this.name = "TemplateError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-		totalMatches.push({ type: &#x22;tag&#x22;, position: position, text: text, offset: offset, value: tagText });
+		totalMatches.push({ type: "tag", position: position, text: text, offset: offset, value: tagText });
 	}
 
 	return totalMatches;
 }
 
 function throwUnopenedTagException(options) {
-	var err = new Errors.<span class="apidocCodeKeywordSpan">XTTemplateError</span>(&#x22;Unopened tag&#x22;);
+	var err = new Errors.<span class="apidocCodeKeywordSpan">XTTemplateError</span>("Unopened tag");
 	err.properties = {
-		xtag: options.xtag.split(&#x22; &#x22;)[0],
-		id: &#x22;unopened_tag&#x22;,
+		xtag: options.xtag.split(" ")[0],
+		id: "unopened_tag",
 		context: options.xtag,
-		explanation: &#x22;The tag beginning with &#x27;&#x22; + options.xtag.substr(0, 10) + &#x22;&#x27; is unclosed&#x22;
+		explanation: "The tag beginning with '" + options.xtag.substr(0, 10) + "' is unclosed"
 	};
 	throw err;
 ...</pre></li>
@@ -2704,7 +2697,7 @@ function throwUnopenedTagException(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTError(message) {
-	this.name = &#x22;GenericError&#x22;;
+	this.name = "GenericError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -2726,8 +2719,8 @@ function throwUnopenedTagException(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTInternalError(message) {
-	this.name = &#x22;InternalError&#x22;;
-	this.properties = { explanation: &#x22;InternalError&#x22; };
+	this.name = "InternalError";
+	this.properties = { explanation: "InternalError" };
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -2749,7 +2742,7 @@ function throwUnopenedTagException(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTScopeParserError(message) {
-	this.name = &#x22;ScopeParserError&#x22;;
+	this.name = "ScopeParserError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
@@ -2761,11 +2754,11 @@ function throwUnopenedTagException(options) {
 			try {
 				parser = this.parser(tag);
 			} catch (error) {
-				err = new Errors.<span class="apidocCodeKeywordSpan">XTScopeParserError</span>(&#x22;Scope parser compilation failed&#x22;);
+				err = new Errors.<span class="apidocCodeKeywordSpan">XTScopeParserError</span>("Scope parser compilation failed");
 				err.properties = {
-					id: &#x22;scopeparser_compilation_failed&#x22;,
+					id: "scopeparser_compilation_failed",
 					tag: tag,
-					explanation: &#x22;The scope parser for the tag &#x22; + tag + &#x22; failed to compile&#x22;,
+					explanation: "The scope parser for the tag " + tag + " failed to compile",
 					rootError: error
 				};
 				throw err;
@@ -2787,24 +2780,24 @@ function throwUnopenedTagException(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function XTTemplateError(message) {
-	this.name = &#x22;TemplateError&#x22;;
+	this.name = "TemplateError";
 	this.message = message;
 	this.stack = new Error(message).stack;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-		totalMatches.push({ type: &#x22;tag&#x22;, position: position, text: text, offset: offset, value: tagText });
+		totalMatches.push({ type: "tag", position: position, text: text, offset: offset, value: tagText });
 	}
 
 	return totalMatches;
 }
 
 function throwUnopenedTagException(options) {
-	var err = new Errors.<span class="apidocCodeKeywordSpan">XTTemplateError</span>(&#x22;Unopened tag&#x22;);
+	var err = new Errors.<span class="apidocCodeKeywordSpan">XTTemplateError</span>("Unopened tag");
 	err.properties = {
-		xtag: options.xtag.split(&#x22; &#x22;)[0],
-		id: &#x22;unopened_tag&#x22;,
+		xtag: options.xtag.split(" ")[0],
+		id: "unopened_tag",
 		context: options.xtag,
-		explanation: &#x22;The tag beginning with &#x27;&#x22; + options.xtag.substr(0, 10) + &#x22;&#x27; is unclosed&#x22;
+		explanation: "The tag beginning with '" + options.xtag.substr(0, 10) + "' is unclosed"
 	};
 	throw err;
 ...</pre></li>
@@ -2873,7 +2866,7 @@ function throwUnopenedTagException(options) {
 		var innerContentParts = [];
 		xmlparsed.forEach(function (part) {
 			inTextTag = updateInTextTag(part, inTextTag);
-			if (inTextTag &#x26;&#x26; part.type === &#x22;content&#x22;) {
+			if (inTextTag &amp;&amp; part.type === "content") {
 				innerContentParts.push(part.value);
 			}
 		});
@@ -2884,13 +2877,13 @@ function throwUnopenedTagException(options) {
 		var index = 0;
 		xmlparsed.forEach(function (part) {
 			inTextTag = updateInTextTag(part, inTextTag);
-			if (part.type === &#x22;content&#x22;) {
-				part.position = inTextTag ? &#x22;insidetag&#x22; : &#x22;outsidetag&#x22;;
+			if (part.type === "content") {
+				part.position = inTextTag ? "insidetag" : "outsidetag";
 			}
-			if (inTextTag &#x26;&#x26; part.type === &#x22;content&#x22;) {
+			if (inTextTag &amp;&amp; part.type === "content") {
 				Array.prototype.push.apply(newArray, reader.parsed[index].map(function (p) {
-					if (p.type === &#x22;content&#x22;) {
-						p.position = &#x22;insidetag&#x22;;
+					if (p.type === "content") {
+						p.position = "insidetag";
 					}
 					return p;
 				}));
@@ -2907,7 +2900,7 @@ function throwUnopenedTagException(options) {
 	parse: function parse(lexed, modules) {
 		function moduleParse(placeHolderContent, parsed) {
 			var moduleParsed = void 0;
-			for (var i = 0, l = modules.length; i &#x3c; l; i++) {
+			for (var i = 0, l = modules.length; i &lt; l; i++) {
 				var _module = modules[i];
 				moduleParsed = _module.<span class="apidocCodeKeywordSpan">parse</span>(placeHolderContent);
 				if (moduleParsed) {
@@ -2934,19 +2927,19 @@ function throwUnopenedTagException(options) {
 		var cursor = 0;
 		var parsed = matches.reduce(function (parsed, match) {
 			var value = content.substr(cursor, match.offset - cursor);
-			if (value.length &#x3e; 0) {
-				parsed.push({ type: &#x22;content&#x22;, value: value });
+			if (value.length &gt; 0) {
+				parsed.push({ type: "content", value: value });
 			}
 			cursor = match.offset + match.value.length;
 			delete match.offset;
-			if (match.value.length &#x3e; 0) {
+			if (match.value.length &gt; 0) {
 				parsed.push(match);
 			}
 			return parsed;
 		}, []);
 		var value = content.substr(cursor);
-		if (value.length &#x3e; 0) {
-			parsed.push({ type: &#x22;content&#x22;, value: value });
+		if (value.length &gt; 0) {
+			parsed.push({ type: "content", value: value });
 		}
 		return parsed;
 	}</pre></li>
@@ -2998,7 +2991,7 @@ function throwUnopenedTagException(options) {
 		return sum + array.length;
 	}, 0);
 	arrays = arrays.filter(function (array) {
-		return array.length &#x3e; 0;
+		return array.length &gt; 0;
 	});
 
 	var resultArray = new Array(totalLength);
@@ -3009,7 +3002,7 @@ function throwUnopenedTagException(options) {
 
 	var i = 0;
 
-	while (i &#x3c;= totalLength - 1) {
+	while (i &lt;= totalLength - 1) {
 		var arrayIndex = getMinFromArrays(arrays, state);
 		resultArray[i] = arrays[arrayIndex][state[arrayIndex]];
 		state[arrayIndex]++;
@@ -3038,7 +3031,7 @@ function throwUnopenedTagException(options) {
     <li>description and source-code<pre class="apidocCodePre">function parse(lexed, modules) {
 		function moduleParse(placeHolderContent, parsed) {
 			var moduleParsed = void 0;
-			for (var i = 0, l = modules.length; i &#x3c; l; i++) {
+			for (var i = 0, l = modules.length; i &lt; l; i++) {
 				var _module = modules[i];
 				moduleParsed = _module.parse(placeHolderContent);
 				if (moduleParsed) {
@@ -3053,22 +3046,22 @@ function throwUnopenedTagException(options) {
 		var placeHolderContent = void 0;
 		var tailParts = [];
 		return lexed.reduce(function (parsed, token) {
-			if (token.type === &#x22;delimiter&#x22;) {
-				inPlaceHolder = token.position === &#x22;start&#x22;;
-				if (token.position === &#x22;end&#x22;) {
+			if (token.type === "delimiter") {
+				inPlaceHolder = token.position === "start";
+				if (token.position === "end") {
 					placeHolderContent = DocUtils.wordToUtf8(placeHolderContent);
 					if (!moduleParse(placeHolderContent, parsed)) {
-						parsed.push({ type: &#x22;placeholder&#x22;, value: placeHolderContent });
+						parsed.push({ type: "placeholder", value: placeHolderContent });
 					}
 					Array.prototype.push.apply(parsed, tailParts);
 					tailParts = [];
 					return parsed;
 				}
-				placeHolderContent = &#x22;&#x22;;
+				placeHolderContent = "";
 				return parsed;
 			}
 			if (inPlaceHolder) {
-				if (token.type === &#x22;content&#x22; &#x26;&#x26; token.position === &#x22;insidetag&#x22;) {
+				if (token.type === "content" &amp;&amp; token.position === "insidetag") {
 					placeHolderContent += token.value;
 				} else {
 					tailParts.push(token);
@@ -3085,7 +3078,7 @@ function throwUnopenedTagException(options) {
 	parse: function parse(lexed, modules) {
 		function moduleParse(placeHolderContent, parsed) {
 			var moduleParsed = void 0;
-			for (var i = 0, l = modules.length; i &#x3c; l; i++) {
+			for (var i = 0, l = modules.length; i &lt; l; i++) {
 				var _module = modules[i];
 				moduleParsed = _module.<span class="apidocCodeKeywordSpan">parse</span>(placeHolderContent);
 				if (moduleParsed) {
@@ -3164,26 +3157,26 @@ function throwUnopenedTagException(options) {
 		if (moduleRendered) {
 			return moduleRendered.value;
 		}
-		if (part.type === &#x22;placeholder&#x22;) {
+		if (part.type === "placeholder") {
 			var value = options.scopeManager.getValue(part.value);
 			if (value == null) {
 				value = options.nullGetter(part);
 			}
 			return DocUtils.utf8ToWord(value);
 		}
-		if (part.type === &#x22;content&#x22; || part.type === &#x22;tag&#x22;) {
+		if (part.type === "content" || part.type === "tag") {
 			return part.value;
 		}
-		throw new Error(&#x22;Unimplemented tag type \&#x22;&#x22; + part.type + &#x22;\&#x22;&#x22;);
-	}).join(&#x22;&#x22;);
+		throw new Error("Unimplemented tag type \"" + part.type + "\"");
+	}).join("");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var ScopeManager = require(&#x22;./scope-manager&#x22;);
-var DocUtils = require(&#x22;./doc-utils&#x22;);
+var ScopeManager = require("./scope-manager");
+var DocUtils = require("./doc-utils");
 
 function moduleRender(part, options) {
 	var moduleRendered = void 0;
-	for (var i = 0, l = options.modules.length; i &#x3c; l; i++) {
+	for (var i = 0, l = options.modules.length; i &lt; l; i++) {
 		var _module = options.modules[i];
 		moduleRendered = _module.<span class="apidocCodeKeywordSpan">render</span>(part, options);
 		if (moduleRendered) {
@@ -3252,7 +3245,7 @@ function render(options) {
 		if (moduleRendered) {
 			return moduleRendered.value;
 		}
-		if (part.type === &#x22;placeholder&#x22;) {
+		if (part.type === "placeholder") {
 ...</pre></li>
     </ul>
 
@@ -3283,3 +3276,4 @@ function render(options) {
     ]
 </div>
 </div>
+</body></html>
