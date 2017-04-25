@@ -1,6 +1,6 @@
 # npmdoc-docxtemplater
 
-#### api documentation for  [docxtemplater (v3.0.11)](https://github.com/open-xml-templating/docxtemplater#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-docxtemplater.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docxtemplater) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docxtemplater.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docxtemplater)
+#### basic api documentation for  [docxtemplater (v3.0.11)](https://github.com/open-xml-templating/docxtemplater#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-docxtemplater.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-docxtemplater) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-docxtemplater.svg)](https://travis-ci.org/npmdoc/node-npmdoc-docxtemplater)
 
 #### .docx generator working with templates and data (like Mustache)
 
